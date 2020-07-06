@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galleries</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <h1 class="text-center display-4 my-4">Galleries</h1>
+  <main id="app" class="galleries">
+    <gallery v-for="(gallery, index) in galleries" :images="filterImages(gallery)" :gallery="gallery" :key="index" />
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../assets/images.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

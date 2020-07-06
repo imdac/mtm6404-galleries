@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galleries</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <h1 class="text-center display-4 my-4">Galleries</h1>
+  <main id="app" class="galleries">
+    <section class="gallery">
+      <h2 class="gallery-title">Winter</h2>
+      <template v-for="(image, index) in images.slice(0,3)">
+        <div class="gallery-featured" v-if="index === 0">
+          <figure>
+            <img class="img-fluid" :src="'../assets/images/' + image.photo_id + '.jpg'" :alt="'image by ' + image.user_name">
+            <figcaption>Image by <a :href="image.user_url" target="_blank">{{ image.user_name }}</a></figcaption>
+          </figure>
+        </div>
+        <div v-else>
+          <figure>
+            <img class="img-fluid" :src="'../assets/images/' + image.photo_id + '.jpg'" :alt="'image by ' + image.user_name">
+            <figcaption>Image by <a :href="image.user_url" target="_blank">{{ image.user_name }}</a></figcaption>
+          </figure>
+        </div>
+      </template>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../assets/images.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
